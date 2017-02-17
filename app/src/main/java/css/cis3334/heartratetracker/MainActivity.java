@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     TextView tvSelect;
     ArrayAdapter<HeartRate> hrAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         lvHeartRate = (ListView)findViewById(R.id.listViewHeartRate);
         tvSelect = (TextView)findViewById(R.id.textViewHeartRate);
+
 
         heartRateList = new HeartRateList();
         heartRateList.InitRandomYouth();
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                 HeartRate hr = (HeartRate) parent.getItemAtPosition(position);
+
                 tvSelect.setText("You selected: " + hr.toString());
             }
         });

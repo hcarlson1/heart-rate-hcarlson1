@@ -15,6 +15,7 @@ public class HeartRate {
     private Integer range;          // which range this heart rate is in, used as index into arrays below
 
     String rangeNames[] = {"Resting", "Moderate", "Endurance", "Aerobic","Anaerobic","Red zone"};
+    Integer rangeColor[] = {R.color.colorLightYellow,R.color.colorYellow,R.color.colorOrange,R.color.colorDarkOrange,R.color.colorRed,R.color.colorAccent};
     String rangeDescriptions[] = {"In active or resting", "Weight maintenance and warm up", "Fitness and fat burning", "Cardio training and endurance","Hardcore interval training","Maximum Effort"};
     Double rangeBounds[] = {.50, .60, .70, .80, .90, 1.00};
 
@@ -51,6 +52,12 @@ public class HeartRate {
         calcHeartRange(age);
         return rangeDescriptions[range];
     }
+    public Integer getRangeColor() {
+        calcHeartRange(age);
+        return rangeColor[range];
+    }
+
+
 
     public Integer getPulse() {
         return pulse;
@@ -71,6 +78,6 @@ public class HeartRate {
 
     @Override
     public String toString() {
-        return "HeartRate = " + pulse + " - " + getRangeName();
+        return "HeartRate = " + pulse + "- " + getRangeName() + " - " + getRangeDescrtiption();
     }
 }

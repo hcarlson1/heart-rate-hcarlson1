@@ -15,8 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select a heart rate"
-        android:textSize="18sp"
-        android:id="@+id/textViewHeartRate" />
+        android:textSize="14sp"
+        android:id="@+id/textViewHeartRate"
+        android:textStyle="normal|italic" />
 
     <ListView
         android:layout_width="match_parent"
